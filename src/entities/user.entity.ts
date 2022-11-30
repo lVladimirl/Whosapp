@@ -20,8 +20,11 @@ export class User {
   @Column({ length: 2000 })
   nome: string;
 
-  @Column({ length: 2000, unique: true })
-  email: string;
+  @Column("varchar",{array:true})
+  email: string[];
+
+  @Column("varchar",{array:true})
+  telefone: string[];
 
   @Column({ length: 200 })
   @Exclude({ toPlainOnly: true })

@@ -1,16 +1,15 @@
-// src/app.ts 
-import express from 'express' 
-import { appRoutes } from './routes' 
-import { errorMiddleware } from './middlewares/error.middleware'
-import { Request, Response } from 'express' 
-export const app = express() 
+import express from "express";
+import { Request, Response } from "express";
+import { userRoutes } from "./routes/useres";
+import { handleErrorMiddleware } from "./middlewares/handleError.middleware";
 
-	app.use(express.json()) 
-	appRoutes(app) 
-	app.get('/', (req: Request, res: Response) => { 
-		res.status(200).json({ 
-			message: "Hello World" 
-		}) 
-	}) 
-	app.use(errorMiddleware) 
-	// app.listen(3000)
+const app = express();
+
+app.use(express.json());
+
+app.use("/users", userRoutes());
+
+app.use(handleErrorMiddleware);
+
+export default app 
+
