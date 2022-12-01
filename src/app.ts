@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import { userRoutes } from "./routes/users";
 import { AppError } from "./errors/AppError";
 import { loginRoutes } from "./routes/login";
+import { contactRoutes } from "./routes/contacts";
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(express.json());
 
 app.use("/users", userRoutes());
 app.use("/login", loginRoutes());
+app.use("/contacts", contactRoutes());
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {

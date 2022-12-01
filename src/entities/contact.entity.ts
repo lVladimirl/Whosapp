@@ -18,12 +18,11 @@ export class Contact {
   @Column({ length: 2000 })
   nome: string;
   
-  @Column({ length: 2000, unique: true })
-  email: string;
+  @Column("varchar",{array:true})
+  email: string[];
 
-  @Column({ length: 200 })
-  @Exclude({ toPlainOnly: true })
-  senha: string;
+  @Column("varchar",{array:true})
+  telefone: string[];
   
   @Column()
   criadoEm: Date;

@@ -31,6 +31,7 @@ export const createLoginService = async ({
       subject: user.id,
       expiresIn: "24h",
     }
+    
   )
 
   return token
