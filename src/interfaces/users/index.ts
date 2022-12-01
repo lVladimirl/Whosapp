@@ -9,6 +9,7 @@ export interface IUser {
   export interface IUserRequest {
     nome: string
     email: string[]
+    telefone: string[]
     senha: string
   }
   
