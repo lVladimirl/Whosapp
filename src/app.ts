@@ -1,16 +1,15 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express";
-import { userRoutes } from "./routes/useres";
-// import { handleErrorMiddleware } from "./middlewares/handleError.middleware";
+import { userRoutes } from "./routes/users";
 import { AppError } from "./errors/AppError";
+import { loginRoutes } from "./routes/login";
 
 const app = express();
 
 app.use(express.json());
 
 app.use("/users", userRoutes());
-
-// app.use(handleErrorMiddleware);
+app.use("/login", loginRoutes());
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {
@@ -19,9 +18,6 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
       status: "error",
     });
   }
-
-  console.error(err);
-
   return response.status(500).json({
     message: "Internal server error",
     status: "error",

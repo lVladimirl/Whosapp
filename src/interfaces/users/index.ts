@@ -14,7 +14,7 @@ export interface IUser {
   }
   
   export interface IUserLogin {
-    email: string
+    nome: string
     senha: string
   }
   
