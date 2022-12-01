@@ -17,11 +17,11 @@ export const contactCreateService = async ({
 
   const user = await userRep.findOne({
     where: {
-      nome,
+      id,
     },
   });
   if (user) {
-    const contact = contactRep.create({ nome, email, telefone, user });
+    const contact = contactRep.create({ nome, email, telefone, user, criadoEm: new Date() });
 
     await contactRep.save(contact);
 
