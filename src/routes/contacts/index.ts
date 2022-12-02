@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { contactCreateController } from "../../controllers/contacts/contactCreate.controller";
+import { contactListController } from "../../controllers/contacts/contactList.controller";
 import { authTokenMiddleware } from "../../middlewares/authToken.middleware";
 import { schemaValidationMiddleware } from "../../middlewares/schemaValidation.middleware";
 import { newContactSchema } from "../../schemas/newContact.schema";
@@ -12,6 +13,11 @@ export const contactRoutes = () => {
     authTokenMiddleware,
     schemaValidationMiddleware(newContactSchema),
     contactCreateController
+  );
+  contact.get(
+    "",
+    authTokenMiddleware,
+    contactListController
   );
 
   return contact;
