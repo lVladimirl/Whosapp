@@ -6,7 +6,7 @@ import "dotenv/config";
     console.error("Erro durante inicialização do Data Source", err);
   });
 
-  app.listen(process.env.PORT || 3000, () => {
+  app.listen(process.env.PORT || 3001, () => {
     console.log("Servidor executando");
   });
 })();
