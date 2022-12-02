@@ -1,0 +1,68 @@
+.Header {
+  background-color: #282c34;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  height: 80px;
+}
+.Header > h1 {
+  margin: 10px 5%;
+  align-self: center;
+}
+.Header > button {
+  margin: 10px 5%;
+  align-self: center;
+  padding: 10px 15px;
+
+  box-sizing: border-box;
+  height: auto;
+
+  background-color: blueviolet;
+  border: none;
+  border-radius: 4px;
+  
+  color: white;
+  font-weight: bold;
+}
+.Header > nav {
+  margin: 10px;
+  width: 80%;
+  display: inherit;
+}
+.Header > nav > ul {
+  width: 100%;
+  height: auto;
+  display: inherit;
+  justify-content: center;
+  gap: 20px;
+
+  list-style-type: none;
+}
+/* .Header > nav > ul > li > button {
+    margin: 0;
+    padding: 10px 15px;
+
+    box-sizing: border-box;
+
+    background-color: blueviolet;
+    border: none;
+    border-radius: 4px;
+
+    color: white;
+    font-weight: bold;
+} */
+
+.Navbar-button {
+  margin: 0;
+  padding: 10px 15px;
+
+  box-sizing: border-box;
+
+  background-color: blueviolet;
+  border: none;
+  border-radius: 4px;
+
+  color: white;
+  font-weight: bold;
+}
