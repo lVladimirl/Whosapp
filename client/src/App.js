@@ -3,6 +3,7 @@ import { Main } from "./components/main";
 import Paths from "./routes";
 import { StyledGlobal } from "./style/style";
 
+
 function App() {
   return (
     <>

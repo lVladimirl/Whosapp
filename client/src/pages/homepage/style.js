@@ -16,24 +16,7 @@ export const Container = styled.div`
   width: 95%;
   max-width: 800px;
 
-  background-color: #281e1e;
+  background-color: #2B5CA6;
 `;
 
-export const Content = styled.div`
-  display: flex;
-  justify-content: center;
 
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-  border-radius: 10px;
-
-  background-color: #281e1e;
-
-  padding: 1rem;
-
-  p {
-    color: #ffffff;
-    font-size: 36px;
-  }
-`;

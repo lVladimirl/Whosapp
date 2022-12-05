@@ -8,6 +8,7 @@ export const StyledGlobal = createGlobalStyle`
         box-sizing: border-box;
         list-style: none;
         font-family: 'Inter', sans-serif;
+        color: white
     }
         
     button {
@@ -38,7 +39,7 @@ max-height: ${(props) => props.maxHeight}px;
 gap:2em;
 
 width:100%;
-max-width: 90%;
+max-width: 100%;
 
 margin: 0 auto;
 padding:3em 1em;
