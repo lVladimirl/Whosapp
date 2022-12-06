@@ -4,7 +4,7 @@ export const StyledMain = styled.main`
   flex-flow: column nowrap;
   align-items:center;
   margin: 0; 
-  min-height:100vh;
+  min-height:90vh;
   height:100%;   
   background-color: #404040;
 `;

@@ -1,0 +1,54 @@
+.modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    color: black;
+    background: #ececec6b;
+
+  }
+  .modal-content {
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 90%;
+    max-width: 400px;
+
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+
+    background-color: #2b5ca6;
+  }
+  .modal-content > h2 {
+    width: 100%;
+    text-align: center;
+  }
+  .modal-content > p {
+    width: 90%;
+    height: 90%;
+
+    margin: 10px 5%;
+
+    text-align: center;
+  }
+  .modal-content > button {
+    height: 30px;
+    width: 50%;
+
+    margin: 10px auto;
+    padding: 5px 0px;
+    border: none;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    background-color: white;
+    color: #3e8bff;
+  }

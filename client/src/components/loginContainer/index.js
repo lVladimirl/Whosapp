@@ -7,40 +7,37 @@ import "./style.css";
 import { Api } from "../../services/api";
 export function LoginContainer() {
   const navigate = useNavigate();
+
+  function handleGoToRegister() {
+    navigate("/register");
+  }
+
   const schema = yup.object().shape({
-    password: yup
+    senha: yup
       .string()
       .required("Required field!")
       .min(6, "minimum 6 characters"),
-    nomeCompleto: yup.string().required("Required field!"),
+    nome: yup.string().required("Required field!"),
   });
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
+
   const onSubmit = (data) => {
-    const formData = {
-      nome: data.nomeCompleto,
-      senha: data.password,
-    };
-    Api.post("login", formData)
+    Api.post("login", data)
       .then((resp) => {
-        console.log(resp.data)
+        console.log(resp.data);
         localStorage.setItem("@WHO-TOKEN", resp.data.token);
         navigate("/homepage");
       })
       .catch((error) => {
         console.log(error);
       });
-    // Api.get("users")
-    //   .then((resp) => {
-    //     console.log(resp.data);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
   };
+
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
@@ -48,18 +45,15 @@ export function LoginContainer() {
 
         <div className="form-login-inputs">
           <label>Nome Completo</label>
-          <input
-            placeholder="nome completo..."
-            {...register("nomeCompleto")}
-          ></input>
-          {errors && <small>{errors.nomeCompleto?.message}</small>}
+          <input placeholder="nome completo..." {...register("nome")}></input>
+          {errors && <small>{errors.nome?.message}</small>}
 
           <label>Senha</label>
-          <input placeholder="senha..." {...register("password")}></input>
-          {errors && <small>{errors.password?.message}</small>}
+          <input placeholder="senha..." {...register("senha")}></input>
+          {errors && <small>{errors.senha?.message}</small>}
         </div>
         <button type="submit">Logar</button>
-        <p>Não possui conta? cadastre-se</p>
+        <p onClick={handleGoToRegister}>Não Possui conta? Faça Cadastro</p>
       </form>
     </div>
   );
