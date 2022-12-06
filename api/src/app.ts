@@ -6,8 +6,12 @@ import { loginRoutes } from "./routes/login";
 import { contactRoutes } from "./routes/contacts";
 
 const app = express();
+const cors = require("cors");
 
 app.use(express.json());
+app.use(cors({
+  origin:"http://localhost:3000"
+}))
 
 app.use("/users", userRoutes());
 app.use("/login", loginRoutes());
