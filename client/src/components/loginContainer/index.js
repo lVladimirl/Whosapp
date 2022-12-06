@@ -24,15 +24,22 @@ export function LoginContainer() {
       nome: data.nomeCompleto,
       senha: data.password,
     };
-    Api.post("login", formData).then((resp) => {
-      console.log(resp.data)
-      localStorage.setItem("@WHO-TOKEN", resp.data.token);
-      localStorage.setItem("@WHO-ID", resp.data.user.id);
-      navigate("/homepage");
-    });
-    Api.get("users").then((resp)=>{
-      console.log(resp.data)
-    })
+    Api.post("login", formData)
+      .then((resp) => {
+        console.log(resp.data)
+        localStorage.setItem("@WHO-TOKEN", resp.data.token);
+        navigate("/homepage");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // Api.get("users")
+    //   .then((resp) => {
+    //     console.log(resp.data);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
   };
   return (
     <div className="login-container">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user.context";
@@ -13,6 +13,12 @@ export const Header = () => {
   function handleGoToProfile(){
     navigate("/profile")
   }
+  useEffect(() => {
+    const token = localStorage.getItem("@WHO-TOKEN")
+    if(token) {
+      setLogin(true)
+    }
+  }, [login]);
   return (
     <>
       <div className="header">
