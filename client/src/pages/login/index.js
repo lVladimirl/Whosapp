@@ -1,8 +1,9 @@
-import { LoginContainer } from "../../components/loginContainer";
+import { LoginContainer } from "../../components/login";
+
 export function Login() {
   return (
     <>
-      <LoginContainer />
+      <LoginContainer/>
     </>
   );
 }

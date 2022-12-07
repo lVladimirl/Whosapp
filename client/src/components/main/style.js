@@ -7,4 +7,6 @@ export const StyledMain = styled.main`
   min-height:90vh;
   height:100%;   
   background-color: #404040;
+
+  #text {display:none;}
 `;
