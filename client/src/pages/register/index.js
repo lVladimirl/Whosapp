@@ -1,4 +1,5 @@
-import { RegisterContainer } from "../../components/registerContainer";
+import { RegisterContainer } from "../../components/registerUser";
+
 export function Register() {
   return (
     <>
