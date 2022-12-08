@@ -1,9 +1,8 @@
-import { RegisterContainer } from "../../components/registerUser";
-
+import {FormUserRegister} from "../../components/registerUser"
 export function Register() {
   return (
     <>
-      <RegisterContainer />
+      <FormUserRegister />
     </>
   );
 }

@@ -3,9 +3,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 
-import "./style.css";
+// import "./style.css";
 import { Api } from "../../services/api";
+import { useState } from "react";
+import { ErrorModal } from "../errorModal";
 export function LoginContainer() {
+  const [formError, setFormError] = useState(null);
   const navigate = useNavigate();
 
   function handleGoToRegister() {
@@ -29,21 +32,26 @@ export function LoginContainer() {
   const onSubmit = (data) => {
     Api.post("login", data)
       .then((resp) => {
-        console.log(resp.data);
         localStorage.setItem("@WHO-TOKEN", resp.data.token);
         navigate("/homepage");
       })
       .catch((error) => {
-        console.log(error);
+        setFormError(error.response.data);
       });
   };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+    <div id="login-register" className="container">
+      {formError && (
+        <ErrorModal
+          message={formError.message}
+          statusCode={formError.statusCode}
+        />
+      )}
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h2>Login</h2>
 
-        <div className="form-login-inputs">
+        <div className="form-inputs">
           <label>Nome Completo</label>
           <input placeholder="nome completo..." {...register("nome")}></input>
           {errors && <small>{errors.nome?.message}</small>}

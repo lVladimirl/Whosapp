@@ -36,7 +36,7 @@ export function Homepage() {
     Api.get("users/profile").then((resp) => {
       setUser(resp.data);
     });
-  }, [user]);
+  }, []);
   return (
     <>
       <div className="Homepage-profile">
@@ -77,7 +77,7 @@ export function Homepage() {
           />
         )}
         {viewIsOpen && (
-          <ViewContactContainer handleViewContact={handleViewContact} />
+          <ViewContactContainer handleViewContact={handleViewContact} user={user} />
         )}
       </div>
     </>
