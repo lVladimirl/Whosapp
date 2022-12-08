@@ -1,69 +1,206 @@
-.Homepage-profile {
-  display: flex;
-  flex-flow: row nowrap;
-
-  width: 90%;
-  min-height: 90%px;
-
-  margin: 2% auto;
-  gap: 5%;
-}
-.Homepage-profile-info {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 10px;
-
-  width: 40%;
-  height: 100%;
-
-  margin: 0px;
-  padding: 25px;
-  box-sizing: border-box;
-
-  border-radius: 8px;
-
-  background-color: #3e8bff;
-  color: white;
-}
-.Homepage-profile-info-contacts {
+@media (min-width: 800px){
+  .Homepage-profile {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    width: 100%;
+  
+    width: 90%;
+    min-height: 90%px;
+  
+    margin: 2% auto;
+    gap: 5%;
   }
-.Homepage-contact-info {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  gap: 10px;
-
-  width: 40%;
-  min-height: 500px;
-
-  margin: 0px;
-  padding: 25px;
-  box-sizing: border-box;
-
-  border-radius: 8px;
-
-  background-color: #3e8bff;
-  color: white;
+  .Homepage-profile-info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+  
+    width: 45%;
+    height: 100%;
+  
+    margin: 0px;
+    padding: 25px;
+    box-sizing: border-box;
+  
+    border-radius: 8px;
+  
+    background-color: #3e8bff;
+    color: white;
+  }
+  .Homepage-profile-info-contacts {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+  .Homepage-contact-info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 10px;
+  
+    width: 45%;
+    min-height: 500px;
+  
+    margin: 0px;
+    padding: 25px;
+    box-sizing: border-box;
+  
+    border-radius: 8px;
+  
+    background-color: #3e8bff;
+    color: white;
+  }
+  .Homepage-contact-info > button {
+    height: 30px;
+    width: 180px;
+  
+    margin: 0px auto;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  
+    color: #3e8bff;
+    font-weight: bold;
+    font-size: 16px;
+  
+    border-radius: 4px;
+    border: none;
+  }
 }
-.Homepage-contact-info > button {
-  height: 30px;
-  width: 180px;
-
-  margin: 0px auto;
-  padding: 5px 10px;
-  box-sizing: border-box;
-
-  color: #3e8bff;
-  font-weight: bold;
-  font-size: 16px;
-
-  border-radius: 4px;
-  border: none;
+@media (min-width: 450px) and (max-width:800px){
+  .Homepage-profile {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  
+    width: 90%;
+    min-height: 90%px;
+  
+    margin: 2% auto;
+    gap: 5%;
+  }
+  .Homepage-profile-info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+  
+    width: 40%;
+    height: 100%;
+  
+    margin: 0px;
+    padding: 25px;
+    box-sizing: border-box;
+  
+    border-radius: 8px;
+  
+    background-color: #3e8bff;
+    color: white;
+  }
+  .Homepage-profile-info-contacts {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+  .Homepage-contact-info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 10px;
+  
+    width: 40%;
+    min-height: 500px;
+  
+    margin: 0px;
+    padding: 25px;
+    box-sizing: border-box;
+  
+    border-radius: 8px;
+  
+    background-color: #3e8bff;
+    color: white;
+  }
+  .Homepage-contact-info > button {
+    height: 30px;
+    width: 180px;
+  
+    margin: 0px auto;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  
+    color: #3e8bff;
+    font-weight: bold;
+    font-size: 16px;
+  
+    border-radius: 4px;
+    border: none;
+  }
 }
-
-
-
+@media (max-width:425px){
+  .Homepage-profile {
+    display: flex;
+    flex-flow: column nowrap;
+  
+    width: 90%;
+    min-height: 90%;
+  
+    margin: 2% auto;
+    gap: 5%;
+  }
+  .Homepage-profile-info {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+  
+    width: 90%;
+    height: 100%;
+  
+    margin: 5%;
+    padding: 25px;
+    box-sizing: border-box;
+  
+    border-radius: 8px;
+  
+    background-color: #3e8bff;
+    color: white;
+  }
+  .Homepage-profile-info-contacts {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+  .Homepage-contact-info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    gap: 10px;
+  
+    width: 90%;
+    min-height: 500px;
+  
+    margin: 0px 5% 5%;
+    padding: 25px;
+    box-sizing: border-box;
+  
+    border-radius: 8px;
+  
+    background-color: #3e8bff;
+    color: white;
+  }
+  .Homepage-contact-info > button {
+    height: 30px;
+    width: 180px;
+  
+    margin: 0px auto;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  
+    color: #3e8bff;
+    font-weight: bold;
+    font-size: 16px;
+  
+    border-radius: 4px;
+    border: none;
+  }
+}

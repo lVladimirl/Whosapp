@@ -1,13 +1,15 @@
-import "./style.css";
+// import "./style.css";
 import { Api } from "../../services/api";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ErrorModal } from "../errorModal";
+import { UserContext } from "../../context/user.context";
 
 export function RegisterContactContainer({ handleRegisterContact }) {
-  const [registerError, setRegisterErrorr] = useState(null);
-
+  const [formError, setFormError] = useState(null);
+  const { user } = useContext(UserContext);
   const schema = yup.object().shape({
     nome: yup.string().required("Required field!"),
     email: yup.string().required("Required field!"),
@@ -24,24 +26,30 @@ export function RegisterContactContainer({ handleRegisterContact }) {
     const formData = {
       nome: data.nome,
       email: data.email.split(", "),
-      telefone: data.email.split(", "),
+      telefone: data.telefone.split(", "),
     };
 
-    Api.post("contacts", formData)
+    Api.post("contacts/" + user.id, formData)
       .then((resp) => {
         handleRegisterContact();
       })
       .catch((error) => {
-        setRegisterErrorr(error.response.data);
+        setFormError(error.response.data);
       });
   };
 
   return (
-    <div className="homepage-register-contact-container">
-      <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+    <div className="container">
+      {formError && (
+        <ErrorModal
+          message={formError.message}
+          statusCode={formError.statusCode}
+        />
+      )}
+      <form className="form" onSubmit={handleSubmit(onSubmit)}>
         <h2>Cadastro de Contatos</h2>
 
-        <div className="form-register-inputs">
+        <div className="form-inputs">
           <label>Nome Completo</label>
           <input placeholder="nome completo..." {...register("nome")}></input>
           {errors && <small>{errors.nome?.message}</small>}
@@ -61,8 +69,8 @@ export function RegisterContactContainer({ handleRegisterContact }) {
           {errors && <small>{errors.telefone?.message}</small>}
         </div>
         <button type="submit">Salvar Contato</button>
-        <p onClick={handleRegisterContact}>voltar</p>
       </form>
+      <button onClick={handleRegisterContact}>voltar</button>
     </div>
   );
 }

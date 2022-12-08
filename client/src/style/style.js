@@ -48,6 +48,4 @@ background-color: #D9D9D9;
 box-shadow: 32px 43px 58px -20px rgba(0,0,0,0.46);
 
 border-radius:15px;
-
-
 `

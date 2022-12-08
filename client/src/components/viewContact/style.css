@@ -1,0 +1,40 @@
+.container-contact {
+    background-color: white;
+    border-radius: 4px;
+    width: 90%;
+    margin: 5px 5%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.container-contact > h3 {
+    color: #2b5ca6;
+}
+.container-contact > p {
+    font-weight: bold;
+    font-size: 14px;
+}
+.contacts {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+}
+.contact-list {
+    overflow-y: auto;
+}
+.contacts > button {
+    background-color: white;
+    color: #3e8bff;
+    border-radius: 4px;
+    width: 90%;
+    margin: 5%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.contacts > h2{
+    color: white;
+    margin: 5px auto;
+}
