@@ -3,9 +3,6 @@ import {
   Column,
   PrimaryGeneratedColumn,
   ManyToOne,
-  ManyToMany,
-  OneToMany,
-  JoinTable,
 } from "typeorm";
 import { Exclude } from "class-transformer";
   import { User } from "./user.entity"
