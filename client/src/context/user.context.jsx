@@ -1,10 +1,11 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 // import { api } from "../services/api";
 // import { useNavigate } from "react-router";
 
 export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState();
   const [login, setLogin] = useState(false);
   // const navigate = useNavigate();
 
@@ -101,7 +102,10 @@ export const UserProvider = ({ children }) => {
   return (
     <UserContext.Provider
       value={{
-        login,setLogin,
+        login,
+        setLogin,
+        user,
+        setUser,
       }}
     >
       {children}

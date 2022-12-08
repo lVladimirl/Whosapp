@@ -1,14 +1,12 @@
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
 import "./style.css";
 import { Api } from "../../services/api";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
+
 export function RegisterContactContainer({ handleRegisterContact }) {
   const [registerError, setRegisterErrorr] = useState(null);
-
-  const navigate = useNavigate();
 
   const schema = yup.object().shape({
     nome: yup.string().required("Required field!"),
@@ -39,7 +37,7 @@ export function RegisterContactContainer({ handleRegisterContact }) {
   };
 
   return (
-    <div className="register-container">
+    <div className="homepage-register-contact-container">
       <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
         <h2>Cadastro de Contatos</h2>
 

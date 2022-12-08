@@ -8,7 +8,6 @@ export const StyledGlobal = createGlobalStyle`
         box-sizing: border-box;
         list-style: none;
         font-family: 'Inter', sans-serif;
-        color: white
     }
         
     button {

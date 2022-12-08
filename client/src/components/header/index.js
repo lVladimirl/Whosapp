@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user.context";
 import "./index.css";
@@ -10,20 +9,20 @@ export const Header = () => {
   function handleGoTologin(){
     navigate("/")
   }
-  function handleGoToProfile(){
-    navigate("/profile")
+  function handleGoHome(){
+    navigate("/homepage")
   }
   useEffect(() => {
     const token = localStorage.getItem("@WHO-TOKEN")
     if(token) {
       setLogin(true)
     }
-  }, [login]);
+  }, []);
   return (
     <>
       <div className="header">
         <h1>Whosapp</h1>
-        {login && login ? <button onClick={handleGoToProfile}>Perfil</button> : <button onClick={handleGoTologin}>Login</button>}
+        {login && login ? <button onClick={handleGoHome}>Home</button> : <button onClick={handleGoTologin}>Login</button>}
       </div>
     </>
   );
